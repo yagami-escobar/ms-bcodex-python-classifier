@@ -1,0 +1,11 @@
+Flask
+pytest
+gunicorn
+pandas
+dvc
+dvc_s3
+mlflow
+numpy
+scikit-learn
+joblib
+

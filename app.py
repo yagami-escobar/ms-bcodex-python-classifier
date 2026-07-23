@@ -1,0 +1,21 @@
+from flask import Flask, request, jsonify
+from model.intent_model import IntentModel
+import os, joblib
+
+
+app = Flask(__name__)
+model = IntentModel()
+
+@app.route("/health")
+def health():
+    return jsonify({"status": "ok"}), 200
+
+@app.route("/predict", methods=["POST"])
+def predict():
+    data = request.get_json()
+    text = data.get("text")
+    return jsonify(model.predict(text)), 200
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=6000)

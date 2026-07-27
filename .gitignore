@@ -1,9 +1,12 @@
 # PYTHON
 __pycache__/
-model/artifacts/
+
 
 # VENV
 .venv/
+
+# ARTIFACTS
+model/artifacts/
 
 # OS
 .DS_Store

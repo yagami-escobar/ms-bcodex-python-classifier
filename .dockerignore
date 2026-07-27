@@ -1,0 +1,39 @@
+# ==========================
+# Git / VCS
+# ==========================
+.git
+.gitignore
+README.md
+
+# ==========================
+# Docker & k8s
+# ==========================
+Dockerfile
+.dockerignore
+k8s/*
+
+# ==========================
+# Python
+# ==========================
+.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Artifacts
+*.pkl
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# ==========================
+# Editor
+# ==========================
+.vscode/
+.idea/
+

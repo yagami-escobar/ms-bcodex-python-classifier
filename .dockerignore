@@ -10,7 +10,7 @@ README.md
 # ==========================
 Dockerfile
 .dockerignore
-k8s/*
+k8s/
 
 # ==========================
 # Python

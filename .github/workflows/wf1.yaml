@@ -19,8 +19,15 @@ jobs:
       - name: stp-update
         run: |
           docker pull debian:bookworm-slim
-          docker run --name stp-update -d debian:bookworm-slim sleep infinity
+          docker run --name debian12 debian:bookworm-slim sleep infinity
+          docker run --name nginx -dp 9797:80 nginx
         
       - name: stp-execute train
         run: |
+          python3 -m venv .venv
+          source .venv/bin/activate
+
+          python3 -m pip install --upgrade pip
+          python3 -m pip install -r requirements.txt
           python3 model/train.py
+          nohup gunicorn --workers 4 --bind 0.0.0.0:6000 app:app &

@@ -18,8 +18,9 @@ jobs:
 
       - name: stp-update
         run: |
-          apt update
-
+          docker pull debian:bookworm-slim
+          docker run --name stp-update -d debian:bookworm-slim sleep infinity
+        
       - name: stp-execute train
         run: |
           python3 model/train.py

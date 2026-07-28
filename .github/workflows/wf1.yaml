@@ -1,0 +1,25 @@
+name: wf1
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read # Permite leer artefactos
+
+jobs:
+  job_ci_buildImage:
+    runs-on: self-hosted
+    steps:
+      - name: stp-CheckoutRepo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: stp-update
+        run: |
+          apt update
+
+      - name: stp-execute train
+        run: |
+          python3 model/train.py

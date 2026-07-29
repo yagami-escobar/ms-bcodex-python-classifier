@@ -19,7 +19,7 @@ jobs:
       - name: stp-update
         run: |
           docker pull debian:bookworm-slim
-          docker run --name debian12 debian:bookworm-slim sleep infinity
+          docker run --name debian12 -d debian:bookworm-slim sleep infinity
           docker run --name nginx -dp 9797:80 nginx
         
       - name: stp-execute train
